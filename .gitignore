@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+.env
+.venv/
+*.log
+
+# Django
+db.sqlite3
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.egg-info/
+
+# VS Code
+.vscode/
+
+# Frontend
+node_modules/
+dist/
+*.DS_Store
+
+# Sistema
+*.swp
+*.swo
+Thumbs.db
+
