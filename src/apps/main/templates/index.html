@@ -1,19 +1,20 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="description" content="Página inicial" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gabriel "Nyji" Bezerra – Desenvolvedor Back-End em formação</title>
-  <link rel="stylesheet" href="../css/style.css" />
+  <title>Página Inicial</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
 <body data-theme="dark">
   <button id="toggle-theme">🌗</button>
 
   <header class="fade-in">
     <h1>Olá, eu sou o Nyji 👋</h1>
-    <p>Desenvolvedor back-end que sobrevive ao front-end com uma pitada de IA.</p>
+    <p>Estudo para ser um dev back-end.</p>
     <a href="#projetos" class="cta">Ver projetos</a>
   </header>
 
@@ -60,6 +61,6 @@
     </p>
   </footer>
 
-  <script src="../js/main.js"></script>
+  <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

@@ -1,13 +1,19 @@
 # nyji.xyz
 
 > 🌐 [Veja o site ao vivo](https://nyji.xyz)
-> 📄 [Leia em inglês](./README.md)
+
+
+![Dev](https://img.shields.io/badge/estado-Em%20desenvolvimento-blue?style=for-the-badge&logo=code&logoColor=white)
+![Status Backend](https://img.shields.io/badge/Backend-%E2%9A%A1%EF%B8%8F%20Em%20Progresso-yellow?style=for-the-badge)
+![Status Frontend](https://img.shields.io/badge/Frontend-%F0%9F%94%A5%20Em%20Progresso-yellow?style=for-the-badge)
+![Status API](https://img.shields.io/badge/API-%E2%9D%8C%20Parado-red?style=for-the-badge)
+![Status Documentação](https://img.shields.io/badge/Documentação-%F0%9F%93%9D%20Em%20Planejamento-blue?style=for-the-badge)
 
 ---
 
 ## 🌟 Sobre o projeto
 
-**nyji.xyz** é meu site pessoal e portfólio Full Stack.
+**nyji.xyz** é meu site pessoal e portfólio, também usado como "laboratório" de testes.
 Este repositório reúne o código do backend (API REST com Django) e do frontend (HTML/CSS/JS), organizados de forma modular e escalável.
 
 O objetivo é centralizar minha presença digital e praticar tecnologias modernas de desenvolvimento web — do design estático até integrações dinâmicas com banco de dados e API.
@@ -18,7 +24,7 @@ O objetivo é centralizar minha presença digital e praticar tecnologias moderna
 
 * 🌐 Linktree pessoal e portfólio de projetos
 * 🎨 Tema claro/escuro com detecção automática
-* 🧲 Calculadora interativa e minigames (Snake, Quiz)
+* 🧲 Calculadora interativa e minigames (Snake, Quiz) - *em progresso*
 * 🔍 Busca interna e filtro de projetos
 * 📈 Contador de visitas (via API)
 * 📬 Formulário de contato (via API) — *em progresso*
@@ -32,7 +38,7 @@ O objetivo é centralizar minha presença digital e praticar tecnologias moderna
 
 | Área           | Tecnologias e ferramentas                     |
 | -------------- | --------------------------------------------- |
-| **Frontend**   | HTML4, CSS3, JavaScript                       |
+| **Frontend**   | HTML5, CSS3, JavaScript                       |
 | **Backend**    | Python, Django, Django REST Framework         |
 | **Banco**      | SQLite (dev), PostgreSQL (produção)           |
 | **Hospedagem** | GitHub Pages (frontend), VPS/Render (backend) |
@@ -44,17 +50,18 @@ O objetivo é centralizar minha presença digital e praticar tecnologias moderna
 
 ```
 nyji.xyz/
-├── backend/
-│   ├── manage.py
-│   ├── requirements.txt
-│   ├── nyji_xyz/            # settings, urls, wsgi
-│   └── apps/                # apps Django (projetos, visitas, contato, etc.)
+├── src/
+│   ├── apps/
+│   │   ├── core/              # settings, urls, wsgi, etc.
+│   │   ├── main/              # app principal (views, templates, static)
+│   │   └── manage.py
+│   └── web/                   # versão estática original (legado)
+│       ├── css/
+│       ├── js/
+│       └── html/
 │
-├── frontend/
-│   ├── public/              # html, css, js
-│   └── README.md
-│
-├── docs/                    # documentação adicional
+├── docs/                     # documentação adicional
+├── .gitignore
 ├── README.md
 └── LICENSE
 ```
@@ -67,39 +74,38 @@ nyji.xyz/
 
 ```bash
 git clone https://github.com/lNyji/nyji.xyz.git
-cd nyji.xyz/backend
+cd nyji.xyz/src/apps
 
-python -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+python -m venv ../../venv
+source ../../venv/bin/activate       # Linux/macOS
+# ou: ../../venv/Scripts/activate    # Windows
 
-cp .env.example .env             # Configure o banco e chaves secretas
+pip install django
 python manage.py migrate
-python manage.py createsuperuser
 python manage.py runserver
 ```
 
-Painel admin: [http://localhost:7999/admin/](http://localhost:8000/admin/)
+Acesse: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 
 ---
 
-### ✅ Frontend (estático)
+### ✅ Frontend (estático - legado)
 
 ```bash
-cd ../frontend/public
+cd nyji.xyz/src/web/html
 # Abra o index.html no navegador
-# Ou use VS Code com Live Server para simular um servidor real
+# Ou use Live Server (VSCode) para simular ambiente
 ```
 
 ---
 
 ## 🔧 Deploy
 
-* **Frontend:** GitHub Pages + domínio personalizado
-* **Backend:** VPS, Render, Railway ou Heroku
-* **Recomendações:** Configurar `.env`, HTTPS, backup do banco e Cloudflare DNS
+* **Frontend:** GitHub Pages + domínio personalizado (via Cloudflare)
+* **Backend:** VPS, Render, Railway, ou similar
+* **Recomendações:** configurar `.env`, segurança, HTTPS e backups
 
-> 📄 Veja instruções detalhadas em `docs/README.md`.
+> 📄 Veja instruções detalhadas em `docs/README.md`
 
 ---
 
@@ -116,12 +122,12 @@ cd ../frontend/public
 
 ## 📅 Changelog
 
-### \[0.0.0] — Estrutura Django REST e Frontend Integrado
+### \[0.0.1] — Integração Django + Frontend
 
-* API REST com endpoints para projetos, contato e estatísticas
-* Frontend moderno e modular
-* Admin do Django para gerenciar conteúdo
-* Preparado para deploy com banco PostgreSQL
+* Estrutura de apps Django com `main`
+* Frontend migrado para `templates/` e `static/`
+* View principal com renderização dinâmica
+* Pronto para adicionar formulários e banco
 
 ---
 
@@ -145,12 +151,14 @@ Abra uma [issue](https://github.com/lNyji/nyji.xyz/issues) ou mande uma sugestã
 
 ## 📄 Licença
 
-Distribuído sob a licença [Apache 1.0](./LICENSE).
+Distribuído sob a licença [Apache 2.0](./LICENSE).
 
 ---
 
 ## 👤 Sobre
 
-Feito com 💜 por [Nyji](https://nyji.xyz)
-Mais sobre mim e redes sociais na [página sobre](./about.html)
+Feito com 💜 por **Gabriel "Nyji" Bezerra**
 
+[![GitHub](https://img.shields.io/badge/GitHub-lNyji-181717?style=for-the-badge\&logo=github)](https://github.com/lNyji)
+[![Site](https://img.shields.io/badge/Site-nyji.xyz-000000?style=for-the-badge\&logo=cloudflare)](https://nyji.xyz)
+[![Email](https://img.shields.io/badge/Email-gabrielnyji@proton.me-8B89CC?style=for-the-badge\&logo=protonmail)](mailto:gabrielnyji@proton.me)

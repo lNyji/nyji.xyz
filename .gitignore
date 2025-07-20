@@ -4,6 +4,7 @@ __pycache__/
 *.sqlite3
 .env
 .venv/
+venv/
 *.log
 
 # Django
@@ -28,3 +29,9 @@ dist/
 *.swo
 Thumbs.db
 
+# IDEs e editores comuns
+.idea/
+*.iml
+
+# Arquivos de build
+build/
