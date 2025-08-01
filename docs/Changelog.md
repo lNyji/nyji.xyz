@@ -2,6 +2,15 @@
 
 Todas as mudanças notáveis neste projeto serão documentadas neste arquivo seguindo a convenção “Keep a Changelog”.
 
+## [0.3.1] - 2025-08-01
+
+### Documentação
+- Atualização do `README.md` com informações referentes à versão `0.3.0`.
+- Instruções adicionadas sobre como instalar dependências com `requirements.txt`.
+
+### Adicionado
+- Arquivo `requirements.txt` com dependências iniciais do projeto (`Django`, `djangorestframework`).
+
 ## [0.3.0] - 2025-08-19
 ### Adicionado
 - Pasta `docs` contendo os arquivos `changelog.md`, `readme.md` e `roadmap.md`.
@@ -10,7 +19,6 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo seg
 
 ### Alterado
 - Estrutura de templates modificada: todos os apps agora seguem o padrão `templates/(nome_do_app)/`.
-
 
 ## [0.2.0] - 2025-07-19
 ### Alterado

@@ -13,7 +13,7 @@
 
 ## 🌟 Sobre o projeto
 
-**nyji.xyz** é meu site pessoal e portfólio, também usado como "laboratório" de testes.
+**nyji.xyz** é meu site pessoal e portfólio, também usado como "laboratório" de testes.  
 Este repositório reúne o código do backend (API REST com Django) e do frontend (HTML/CSS/JS), organizados de forma modular e escalável.
 
 O objetivo é centralizar minha presença digital e praticar tecnologias modernas de desenvolvimento web — do design estático até integrações dinâmicas com banco de dados e API.
@@ -52,15 +52,22 @@ O objetivo é centralizar minha presença digital e praticar tecnologias moderna
 nyji.xyz/
 ├── src/
 │   ├── apps/
-│   │   ├── core/              # settings, urls, wsgi, etc.
-│   │   ├── main/              # app principal (views, templates, static)
+│   │   ├── core/                 # settings, urls, wsgi, etc.
+│   │   ├── main/                 # app principal
+│   │   ├── projetos/             # subdomínio nyji.xyz/projetos/
+│   │   ├── sobre/                # subdomínio nyji.xyz/sobre/
 │   │   └── manage.py
-│   └── web/                   # versão estática original (legado)
+│   └── web/                      # versão estática original (legado)
 │       ├── css/
 │       ├── js/
 │       └── html/
 │
-├── docs/                     # documentação adicional
+├── docs/                         # documentação adicional
+│   ├── changelog.md
+│   ├── roadmap.md
+│   └── readme.md
+│
+├── requirements.txt
 ├── .gitignore
 ├── README.md
 └── LICENSE
@@ -80,7 +87,7 @@ python -m venv ../../venv
 source ../../venv/bin/activate       # Linux/macOS
 # ou: ../../venv/Scripts/activate    # Windows
 
-pip install django
+pip install -r ../../requirements.txt
 python manage.py migrate
 python manage.py runserver
 ```
@@ -105,7 +112,13 @@ cd nyji.xyz/src/web/html
 * **Backend:** VPS, Render, Railway, ou similar
 * **Recomendações:** configurar `.env`, segurança, HTTPS e backups
 
-> 📄 Veja instruções detalhadas em `docs/README.md`
+> 📄 Veja instruções detalhadas em `docs/readme.md`
+
+---
+
+## 📅 Changelog
+
+Acompanhe todas as versões e mudanças em [`docs/changelog.md`](docs/changelog.md)
 
 ---
 
@@ -120,31 +133,20 @@ cd nyji.xyz/src/web/html
 
 ---
 
-## 📅 Changelog
-
-### \[0.0.1] — Integração Django + Frontend
-
-* Estrutura de apps Django com `main`
-* Frontend migrado para `templates/` e `static/`
-* View principal com renderização dinâmica
-* Pronto para adicionar formulários e banco
-
----
-
 ## 🤝 Contribuindo
 
 Este projeto é um aprendizado e vitrine pessoal, mas pull requests, correções e ideias são sempre bem-vindos.
 
-0. Faça um fork do repositório
-1. Crie sua branch: `git checkout -b feature/nova-feature`
-2. Commit: `git commit -m 'Adiciona nova feature'`
+0. Faça um fork do repositório  
+1. Crie sua branch: `git checkout -b feature/nova-feature`  
+2. Commit: `git commit -m 'Adiciona nova feature'`  
 3. Push e abra um Pull Request
 
 ---
 
 ## 🧰 Issues & Sugestões
 
-Encontrou um problema ou tem uma ideia legal?
+Encontrou um problema ou tem uma ideia legal?  
 Abra uma [issue](https://github.com/lNyji/nyji.xyz/issues) ou mande uma sugestão via pull request.
 
 ---
@@ -159,6 +161,7 @@ Distribuído sob a licença [Apache 2.0](./LICENSE).
 
 Feito com 💜 por **Gabriel "Nyji" Bezerra**
 
-[![GitHub](https://img.shields.io/badge/GitHub-lNyji-181717?style=for-the-badge\&logo=github)](https://github.com/lNyji)
-[![Site](https://img.shields.io/badge/Site-nyji.xyz-000000?style=for-the-badge\&logo=cloudflare)](https://nyji.xyz)
-[![Email](https://img.shields.io/badge/Email-gabrielnyji@proton.me-8B89CC?style=for-the-badge\&logo=protonmail)](mailto:gabrielnyji@proton.me)
+[![GitHub](https://img.shields.io/badge/GitHub-lNyji-181717?style=for-the-badge&logo=github)](https://github.com/lNyji)
+[![Site](https://img.shields.io/badge/Site-nyji.xyz-000000?style=for-the-badge&logo=cloudflare)](https://nyji.xyz)
+[![Email](https://img.shields.io/badge/Email-gabrielnyji@proton.me-8B89CC?style=for-the-badge&logo=protonmail)](mailto:gabrielnyji@proton.me)
+
