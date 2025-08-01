@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre | Nyji.xyz</title>
+  <link rel="stylesheet" href="{% static 'css/style_sobre.css' %}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'sobre_favicon/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'sobre_favicon/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'sobre_favicon/favicon-16x16.png' %}">
+
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/">Início</a>
+      <a href="/sobre/">Sobre</a>
+      <a href="/contato/">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="introduction">
+      <h2>Bem-vindo ao Nyji.xyz!</h2>
+      <p>Nyji.xyz é um projeto focado em tecnologia, programação e criatividade digital, com soluções modernas e acessíveis para quem quer aprender ou criar.</p>
+    </section>
+
+    <section id="quem-sou">
+      <h2>Quem sou eu?</h2>
+      <p>Sou um estudante de técnico em informática voltado para programação, desenvolvendo este projeto como espaço de experimentação e aprendizado.</p>
+    </section>
+
+    <section id="github">
+      <h2>Veja o projeto</h2>
+      <p>
+        O código está aberto, para mais informações, visite minha página de projetos:
+        <a href="{% url 'projetos_home' %}" target="_blank" rel="noopener">projetos</a>
+      </p>
+    </section>
+  </main>
+
+    <footer>
+        <hr />
+        <h2>Obrigado por visitar!</h2>
+        <p>Desenvolvido por Gabriel "Nyji" Bezerra</p>
+        <p>Email: <a href="mailto:gabrielnyji@proton.me">gabrielnyji@proton.me</a></p>
+
+        <nav>
+        <a href="{% url 'home' %}">Início</a> |
+        <a href="{% url 'sobre_home' %}">Sobre</a> |
+        <a href="{% url 'projetos_home' %}">Projetos</a> |
+        <a href="pessoal/contato.html">Contato</a> |
+        <a href="jogos/index.html">Jogos</a>
+        </nav>
+
+    </footer>
+
+  <script src="{% static 'js/sobre.js' %}"></script>
+</body>
+</html>

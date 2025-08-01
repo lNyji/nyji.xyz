@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página Inicial</title>
+  <link rel="stylesheet" href="{% static 'css/style_main.css' %}" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'main_favicon/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'main_favicon/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'main_favicon/favicon-16x16.png' %}">
+</head>
+<body data-theme="dark">
+  <button id="toggle-theme">🌗</button>
+
+  <header class="fade-in">
+    <h1>Olá, eu sou o Nyji 👋</h1>
+    <p>Estudo para ser um dev back-end.</p>
+    <a href="{% url 'projetos_home' %}" class="cta"> Ver meus projetos</a>
+  </header>
+
+  <section id="sobre" class="fade-in">
+    <h2>Sobre Mim</h2>
+    <p>Me chamo Gabriel "Nyji" Bezerra, sou apaixonado por tecnologia, programação e tudo que envolve código. Gosto de criar soluções úteis (ou esquisitas).</p>
+    <p>Esse site é meu espaço pessoal pra compartilhar projetos, anotações, experimentos e coisinhas que acho interessante no caminho.</p>
+  </section>
+
+  <footer>
+    <hr />
+    <h2>Obrigado por visitar!</h2>
+    <p>Desenvolvido por Gabriel "Nyji" Bezerra</p>
+    <p>Email: <a href="mailto:gabrielnyji@proton.me">gabrielnyji@proton.me</a></p>
+
+    <nav>
+      <a href="{% url 'home' %}">Início</a> |
+      <a href="{% url 'projetos_home' %}">Projetos</a> |
+      <a href="pessoal/contato.html">Contato</a> |
+      <a href="{% url 'sobre_home' %}">Sobre</a> 
+    </nav>
+
+  </footer>
+
+  <script src="{% static 'js/script_main.js' %}"></script>
+</body>
+</html>
